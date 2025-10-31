@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AIProcess – Prozessdokumentation in Minuten</title>
+  <meta name="description" content="AI-Assistenz für KMU & Teams: Prozessdokumentation in Minuten statt Wochen. ISO-freundliche Struktur, Export nach Word & PDF. Early Access sichern." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <!-- Tailwind via CDN for quick start -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root{ --bg: #0b1020; --card: #0f172a; --muted:#94a3b8; --brand:#6366f1; }
+    body{ font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; background: radial-gradient(1200px 800px at 70% -10%, rgba(99,102,241,.25), transparent), var(--bg); color:#e2e8f0; }
+    .glass{ background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)); border: 1px solid rgba(255,255,255,.08); }
+    .shadow-soft{ box-shadow: 0 10px 30px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.05); }
+    .badge{ border:1px solid rgba(255,255,255,.2); background: rgba(255,255,255,.06); padding:.25rem .5rem; border-radius:.5rem; }
+    .container{ max-width: 1100px; }
+    .check::before{ content:"✓"; margin-right:.5rem; }
+    .input{ background:#0b1222; border:1px solid rgba(255,255,255,.1); border-radius:.75rem; padding:.75rem 1rem; width:100%; color:#e2e8f0 }
+    .input:focus{ outline:none; border-color: var(--brand); box-shadow: 0 0 0 3px rgba(99,102,241,.25); }
+    .btn{ background: linear-gradient(180deg, #7c83ff, #5a5fee); color:white; border-radius:.9rem; padding:.9rem 1.1rem; font-weight:700; }
+    .btn:hover{ filter:brightness(1.05); transform: translateY(-1px); }
+    .pill{ padding:.6rem .9rem; border-radius:999px; background: rgba(99,102,241,.15); color:#c7d2fe; border:1px solid rgba(99,102,241,.35) }
+    .mono{ font-variant-ligatures: contextual; font-feature-settings: "calt" 1; }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="container mx-auto px-4 py-6 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="h-9 w-9 rounded-xl bg-indigo-500/20 border border-indigo-400/30 grid place-items-center">⚙️</div>
+      <div class="text-xl font-extrabold tracking-tight">AIProcess<span class="text-indigo-400">.info</span></div>
+    </div>
+    <nav class="hidden md:flex items-center gap-6 text-sm text-slate-300">
+      <a href="#features" class="hover:text-white">Funktionen</a>
+      <a href="#how" class="hover:text-white">So funktioniert’s</a>
+      <a href="#pricing" class="hover:text-white">Preise</a>
+      <a href="#cta" class="pill">Early Access</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="container mx-auto px-4 pt-6 pb-10 md:pt-16 md:pb-20">
+    <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+      <div>
+        <div class="inline-flex items-center gap-2 badge text-sm text-indigo-200 mb-4">Wizard-first · ISO-freundlich · Export nach Word/PDF</div>
+        <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-4">Prozessdokumentation in <span class="text-indigo-400">Minuten</span> statt Wochen.</h1>
+        <p class="text-slate-300 text-lg leading-relaxed mb-6">Erfassen. Generieren. Exportieren. Der geführte Wizard erzeugt vollständige Prozessdokus inkl. Rollen (RACI), Risiken & KPIs — ohne BPM-Overhead.</p>
+        <ul class="space-y-2 mb-8 text-slate-200">
+          <li class="check">Schritt-für-Schritt-Wizard statt Whiteboard</li>
+          <li class="check">Automatische Texte, Diagramm-Stub & ISO-Struktur</li>
+          <li class="check">Exports: Word, PDF · später: BPMN/Confluence</li>
+        </ul>
+        <div class="flex items-center gap-3">
+          <a href="#cta" class="btn">Kostenlosen Zugang anfragen</a>
+          <span class="text-slate-400 text-sm">Early Access · begrenzte Plätze</span>
+        </div>
+      </div>
+      <div class="glass shadow-soft rounded-2xl p-4 md:p-6">
+        <!-- Mocked UI Card -->
+        <div class="bg-slate-900/60 rounded-xl border border-white/10 overflow-hidden">
+          <div class="px-4 py-3 border-b border-white/10 flex items-center justify-between">
+            <div class="text-sm text-slate-300">Wizard · Prozess erfassen</div>
+            <div class="text-xs text-slate-400 mono">#DEMO</div>
+          </div>
+          <div class="p-4 md:p-6 space-y-4">
+            <label class="block text-sm text-slate-300">Kurztitel des Prozesses</label>
+            <input class="input" placeholder="z. B. Eingangsrechnungen prüfen" />
+            <label class="block text-sm text-slate-300 mt-2">Ziel / Ergebnis</label>
+            <input class="input" placeholder="z. B. Freigegebene Rechnung im ERP" />
+            <div class="grid md:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm text-slate-300">Rollen</label>
+                <input class="input" placeholder="Buchhaltung, Einkauf, GF" />
+              </div>
+              <div>
+                <label class="block text-sm text-slate-300">Systeme</label>
+                <input class="input" placeholder="DATEV, SAP, E-Mail" />
+              </div>
+            </div>
+            <button class="btn w-full mt-2">AI-Vorschlag generieren →</button>
+            <p class="text-xs text-slate-400">Demo: Vorschau generiert strukturierte Beschreibung, Schritte, RACI, Risiken, KPIs. Export als DOCX/PDF.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Logos (placeholder) -->
+  <section class="container mx-auto px-4 pb-4 md:pb-8">
+    <div class="text-center text-slate-400 text-sm">Vertraut von KMU, Beratungen & internen Teams</div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="container mx-auto px-4 py-10">
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="glass rounded-2xl p-6 border border-white/10">
+        <div class="text-lg font-semibold mb-2">Geführter Wizard</div>
+        <p class="text-slate-300">Garantiert vollständig: Zweck, Scope, Inputs/Outputs, Rollen (RACI), Schritte, Risiken, KPIs, Dokumente.</p>
+      </div>
+      <div class="glass rounded-2xl p-6 border border-white/10">
+        <div class="text-lg font-semibold mb-2">AI-Assistenz ohne Bullshit</div>
+        <p class="text-slate-300">Konkret, prüfbar, audit-sicher. Textbausteine sind editierbar und nachvollziehbar.</p>
+      </div>
+      <div class="glass rounded-2xl p-6 border border-white/10">
+        <div class="text-lg font-semibold mb-2">Exports & Vorlagen</div>
+        <p class="text-slate-300">Word & PDF sofort. Später: BPMN, Confluence, SharePoint, ISO 9001 Mapping.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section id="how" class="container mx-auto px-4 py-10">
+    <div class="glass rounded-2xl p-6 border border-white/10">
+      <h2 class="text-2xl font-bold mb-4">So funktioniert’s</h2>
+      <ol class="list-decimal ml-6 space-y-2 text-slate-300">
+        <li>Wizard beantwortet — wenige Felder pro Schritt</li>
+        <li>AI generiert saubere Prozessdoku & RACI</li>
+        <li>Du passt an, exportierst als DOCX/PDF</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="container mx-auto px-4 py-10">
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="glass rounded-2xl p-6 border border-white/10">
+        <div class="text-sm text-indigo-200 mb-1">Early Access</div>
+        <h3 class="text-2xl font-bold mb-2">Starter</h3>
+        <div class="text-3xl font-extrabold mb-4">29 € <span class="text-base text-slate-400">/ Monat</span></div>
+        <ul class="space-y-2 text-slate-300 mb-6">
+          <li class="check">Wizard & AI-Assistenz</li>
+          <li class="check">Unbegrenzte Exporte</li>
+          <li class="check">1 Team · 3 Nutzer</li>
+        </ul>
+        <a href="#cta" class="btn inline-block">Platz sichern</a>
+      </div>
+      <div class="glass rounded-2xl p-6 border border-white/10">
+        <div class="text-sm text-indigo-200 mb-1">Early Access</div>
+        <h3 class="text-2xl font-bold mb-2">Business</h3>
+        <div class="text-3xl font-extrabold mb-4">199 € <span class="text-base text-slate-400">/ Monat</span></div>
+        <ul class="space-y-2 text-slate-300 mb-6">
+          <li class="check">Alles aus Starter</li>
+          <li class="check">BPMN/Confluence (Roadmap)</li>
+          <li class="check">White-Label Optionen</li>
+        </ul>
+        <a href="#cta" class="btn inline-block">Anfragen</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA / Lead form -->
+  <section id="cta" class="container mx-auto px-4 py-10">
+    <div class="glass rounded-2xl p-6 border border-white/10">
+      <h2 class="text-2xl font-bold mb-4">Early Access anfragen</h2>
+      <p class="text-slate-300 mb-4">Hinterlasse deine Daten, wir melden uns mit Einladung & Demo. <span class="text-slate-400">(kein Spam)</span></p>
+      <form id="leadForm" class="grid md:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-sm mb-1">Name</label>
+          <input name="name" class="input" required />
+        </div>
+        <div>
+          <label class="block text-sm mb-1">Firma</label>
+          <input name="company" class="input" />
+        </div>
+        <div class="md:col-span-2">
+          <label class="block text-sm mb-1">E‑Mail</label>
+          <input type="email" name="email" class="input" required />
+        </div>
+        <div class="md:col-span-2">
+          <label class="block text-sm mb-1">Wie dokumentierst du aktuell Prozesse?</label>
+          <input name="current" class="input" placeholder="Word/Excel, Notion, ARIS/Signavio, …" />
+        </div>
+        <div class="md:col-span-2">
+          <label class="block text-sm mb-1">Was nervt dich am meisten?</label>
+          <textarea name="pain" class="input" rows="3" placeholder="z. B. fehlende Vorlagen, zu komplex, kein Export, …"></textarea>
+        </div>
+        <div class="md:col-span-2 flex items-center gap-3">
+          <button class="btn" type="submit">Absenden</button>
+          <span id="status" class="text-slate-400 text-sm"></span>
+        </div>
+      </form>
+      <p class="text-xs text-slate-500 mt-4">Mit dem Absenden stimmst du der Verarbeitung deiner Angaben zum Zweck der Kontaktaufnahme zu. <a href="#privacy" class="underline">Datenschutz</a></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="container mx-auto px-4 py-10 text-slate-400 text-sm">
+    <div class="flex flex-col md:flex-row justify-between gap-4">
+      <div>© <span id="year"></span> AIProcess. Alle Rechte vorbehalten.</div>
+      <div class="flex gap-4">
+        <a href="#privacy" class="hover:text-slate-200">Datenschutz</a>
+        <a href="#imprint" class="hover:text-slate-200">Impressum</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Minimal JS to send form to a webhook endpoint (replace FORM_ENDPOINT) -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const FORM_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID"; // TODO: Replace with your Formspree ID or self-hosted endpoint
+
+    const form = document.getElementById('leadForm');
+    const status = document.getElementById('status');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      status.textContent = 'Sende…';
+      const data = Object.fromEntries(new FormData(form).entries());
+
+      try {
+        const res = await fetch(FORM_ENDPOINT, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(data)
+        });
+        if (res.ok) {
+          status.textContent = 'Danke! Wir melden uns bald.';
+          form.reset();
+        } else {
+          status.textContent = 'Fehler beim Senden. Bitte später erneut versuchen.';
+        }
+      } catch (err) {
+        status.textContent = 'Netzwerkfehler. Bitte erneut versuchen.';
+      }
+    });
+  </script>
+
+  <!-- Privacy & Imprint placeholders -->
+  <section id="privacy" class="container mx-auto px-4 pb-6">
+    <div class="text-xs text-slate-500">Datenschutzhinweis (Kurzfassung): Wir verarbeiten die im Formular eingegebenen Daten zur Kontaktaufnahme im Rahmen des Early-Access-Programms. Rechtsgrundlage Art. 6 Abs. 1 lit. b DSGVO. Keine Weitergabe an Dritte. Auf Wunsch löschen wir deine Daten. Volltext folgt im Produktivbetrieb.</div>
+  </section>
+  <section id="imprint" class="container mx-auto px-4 pb-16">
+    <div class="text-xs text-slate-500">Impressum (Platzhalter): Verantwortlich i.S.d. § 5 TMG – Name, Anschrift, Kontakt. Bitte ersetzen, bevor die Seite produktiv geht.</div>
+  </section>
+</body>
+</html>
